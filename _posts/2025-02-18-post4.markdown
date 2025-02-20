@@ -1,0 +1,103 @@
+---
+layout: post
+title: "Building the Enclosure"
+subtitle: "From DIY to Pro-Level"
+date: 2025-02-18 12:00:04 +0100
+background: /img/posts/1.jpg
+categories: [PowerBox]
+author: TheBrightKnight
+project: PowerBox
+---
+
+<link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+The enclosure transforms this from a DIY project into something that _actually_ looks like a real product. Your choice of material impacts durability, heat dissipation, ease of use, and aesthetics.
+
+<div style="text-align:center;">
+<img src="/img/powerbox_post4/5.jpg"  style="max-width:95%; height:auto;">
+</div>
+
+<!-- <img src="/img/powerbox_post4/3.jpg" style="float: right; max-width: 30%; height: auto; margin-left: 35px;"> -->
+
+## **CNC Machining (Premium Choice)**
+
+**Pros:**
+
+- High-grade aluminum = rugged, weatherproof, and built to last.
+- Excellent heat dissipation.
+- Allow threaded inserts for easy mounting.
+- Supports laser markings for professional-looking labels.
+- Available in different colors for a sleek finish.
+
+**Con:**
+
+- Expensive (but worth it if you want a pro-level build).
+
+<div style="text-align:center;">
+<img src="/img/powerbox_post4/1.jpeg"  style="max-width:44.5%; height:auto;">
+<img src="/img/powerbox_post4/2.jpg"  style="max-width:25%; height:auto;">
+<img src="/img/powerbox_post4/3.jpg"  style="max-width:25%; height:auto;">
+</div>
+
+## **3D Printing (Budget Choice)**
+
+<img src="/img/powerbox_post4/4.jpeg" style="float: right; max-width: 40%; height: auto; margin-left: 35px;">
+
+**Pros:**
+
+- Much cheaper than CNC.
+- Easy to reprint if damaged.
+- Tough materials like PETG and ASA can handle the job.
+
+**Cons:**
+
+- Requires a 3D printer that can handle PETG/ASA.
+- Not as durable — prone to warping in heat.
+- Threads wear out fast (metal inserts help but require thicker design).
+- No laser markings — stickers or prints won’t look as clean.
+
+## **What I Did?**
+
+Easy: Printed first to test, then ordered CNC! - Best of both worlds.
+
+## **Files & Ordering**
+
+Find all 3D (.STEP) files in my [<u>GitHub repository</u>](https://github.com/TheBrightKnight/PowerBox).
+
+- **Each version includes:**
+  - _Box_ folder → 3D file + PDF with thread specs (for CNC).
+  - _Lid_ folder → 3D file + DXF file for laser marking.
+
+### **Ordering CNC (Recommended)**
+
+- I used JLCPCB’s CNC service, but you can choose any manufacturer.
+- **Settings to choose:**
+  - **Material:** Aluminum 6061
+  - **Surface finish & color**
+  - **Threads:** Upload the PDF file
+  - **Laser markings:** Upload the DXF file
+- Choose the cheapest shipping option before submitting your order. This will request a quote (usually ready in 24 hours).
+
+<div style="text-align:center;">
+<img src="/img/powerbox_post4/6.png"  style="max-width:45%; height:auto; margin-right: 20px;">
+<img src="/img/powerbox_post4/7.png"  style="max-width:45%; height:auto;">
+</div>
+
+---
+
+# **Get Ready for the Next Step!**
+
+Next up: Drivers & Software. Let’s bring this beast to life!
+
+---
+
+<div style="background: darkgray;padding: 25px; padding-bottom: 10px; border-radius: 15px;">
+<font style="font-weight: bold">Want the PCB, microcontroller, components, CNC or 3D prints and pre-installed firmware delivered to you?</font> 
+<p style="margin-top: 10px"><a href="mailto:TheBrightKnight@duck.com"><u>Send me an email</u></a> or use the <a href="/contact"><u>contact form</u></a></p>
+</div>
+
+See you soon!  
+~The Bright Knight

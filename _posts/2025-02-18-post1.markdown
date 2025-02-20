@@ -1,0 +1,106 @@
+---
+layout: post
+title: "The Power Box"
+subtitle: "The Great Cable Disaster™"
+date: 2025-02-18 12:00:01 +0100
+background: /img/posts/1.jpg
+categories: [PowerBox]
+author: TheBrightKnight
+project: PowerBox
+---
+
+<link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+## Welcome back, my fellow cable-overlords!
+
+<img src="/img/powerbox_post1/1.jpg" style="float: right; max-width: 30%; height: auto; margin-left: 35px;">
+
+I honestly have no clue where to start with this one. This project? Oh, it’s just my longest, biggest, most complicated, most hair-pulling, sleep-depriving, "why do I even do this to myself" project ever. But hey, I survived, I learned a ton, and now you get to learn from my chaos. Who knows, maybe you’ll even build one yourself!
+<br>
+<br>
+
+So, after two years of trial, error, and moments of existential dread, I present to you – _drumroll_ – **The PowerBox!**
+<br>
+<br>
+<br>
+<br>
+
+## The Great Cable Disaster™
+
+Now, if you’ve dabbled in astrophotography for more than five minutes, you’ve probably encountered **The Great Cable Disaster™**. Cables everywhere. Dangling. Tangling. Creating their own gravity wells.
+
+Maybe you’ve had a meridian flip that turned into a full-blown rig flip (bonus points if something snapped in the process). Maybe a rogue cable decided to yoink your expensive camera’s USB connection straight to the afterlife. Or, if you’re extra lucky, a random neighborhood cat used your rig as a jungle gym, and all your night’s hard work turned into a gallery of _not-so-artistic_ star trails.
+
+Even when you _think_ you’ve got cable management under control – spoiler alert – you don’t. Not for long, anyway.
+
+So, like any good problem-solver (or desperate hobbyist on a budget), you go online. And what do you find? Power boxes! The magical fix! Only, oh wait… they cost a small fortune. Because of course they do.
+
+That’s when I said, “Enough of this!” and decided to build my own. But not just _any_ DIY power box – I wanted something better, smarter, and, most importantly, _way_ cheaper.
+
+And I did it. It’s beautiful. It’s powerful. It’s got more bells and whistles than a spaceship. Voltage readings? Check. Load monitoring? Check. Full control over each output? Oh yeah. The PowerBox isn’t just a power solution – it’s the power solution.
+
+## The Must-Have Features:
+
+<img src="/img/powerbox_post1/4.jpeg" style="float: right; max-width: 30%; height: auto; margin-left: 35px;">
+
+- **Controlled DC Outputs** – At least 4 of them, because why stop at one?
+- **Controlled RCA Output** – Dew heaters love these, and we love dew heaters.
+- **Always-On Outputs** – Because some things just need to stay powered, like your unwavering astrophotography obsession.
+- **Independent Voltage & Amperage Readings** – So you actually know what’s sucking up all your power.
+- **Robust Outputs** – No wimpy connections here; we’re talking serious power handling.
+- **Temperature & Humidity Sensors** – For automatic smart dew heater control. Fancy, huh?
+- **Special Ports for Extra Accessories** – Bluetooth modules, external sensors, future gadgets... whatever your tinkering heart desires.
+- **ASCOM Support** – So it plays nice with N.I.N.A and other software.
+- **Custom Software** – For remote control, tweaking settings, and looking extra cool.
+
+Naturally, there were _incidents_ along the way. Burnt boards. Exploding components. A few choice words yelled into the void. So, I added some extra protections:
+
+- **Reverse Voltage Protection** – Because mistakes happen.
+- **High/Low Voltage Protection** – Because gear is expensive.
+- **High Load Protection** – Because you _will_ try to power everything at once.
+- **Temperature Protection** – Because nothing should melt.
+- **Theft Protection\*** – Because of people.
+- **Wife Protection\*** – Because sometimes you need to justify why you just bought _another_ rig.
+
+> _Fine print: These last two don’t actually exist, but hey, one can dream._
+
+## Enter: The Pro Version
+
+<img src="/img/powerbox_post1/2.jpeg" style="float: right; max-width: 30%; height: auto; margin-left: 35px;">
+
+Of course, I didn’t stop there. As the project grew, I got feedback (and more wild ideas), so I ended up making _two_ versions:
+
+1. **The Essential** – The basic-but-awesome version with all the must-haves.
+2. **The Pro** – Because “Pro” sounds cooler, and I wanted to add _even more_ stuff:
+   - A USB 3.0 hub with 4 USB3.0 and 2 USB2.0 ports.
+   - A dedicated 5V power line for the hub and other goodies.
+   - _More_ DC outputs, because why not?
+
+<br>
+<br>
+
+## But Wait, There’s Software!
+
+What’s the point of fancy hardware if you don’t have killer software to match? Here’s what I made sure to include:
+
+- **Smart Heater Control** – Based on temperature & humidity, because logic is nice.
+- **Live Amperage Graphs** – See power usage in real time!
+- **Total Session Power Monitoring** – So you know exactly how much juice your setup is drinking.
+- **Customizable Output Names** – No more guessing which port does what.
+- **Flexible Control Modes** – PWM or On/Off? You decide!
+- **Remote Access** – Control your PowerBox from anywhere, including your phone.
+- **Software & Hardware Updates** – Because future-you will want even more features.
+
+So, my dear reader, are you ready to embark on this journey of DIY brilliance? Keep reading – trust me, it’s worth it.
+
+---
+
+<div style="background: darkgray;padding: 25px; padding-bottom: 10px; border-radius: 15px;">
+<font style="font-weight: bold">Want the PCB, microcontroller, components, CNC or 3D prints and pre-installed firmware delivered to you?</font> 
+<p style="margin-top: 10px"><a href="mailto:TheBrightKnight@duck.com"><u>Send me an email</u></a> or use the <a href="/contact"><u>contact form</u></a></p>
+</div>
+
+~The Bright Knight

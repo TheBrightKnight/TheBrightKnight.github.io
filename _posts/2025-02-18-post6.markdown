@@ -1,0 +1,68 @@
+---
+layout: post
+title: "Behind the Code: The Magic (and Chaos) of the Alpaca Driver"
+subtitle: "How to Make Your Astrophotography Setup Dance to Your Command Without Losing Your Mind"
+date: 2025-02-18 12:00:06 +0100
+background: /img/posts/1.jpg
+categories: [PowerBox]
+author: TheBrightKnight
+project: PowerBox
+---
+
+<link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+Hey, curious minds, welcome back! If you're reading this, you're either really into tech, or you're wondering how deep the rabbit hole really goes. Fair warning: this post might not be for everyone, but if you're looking for some laughs (and possibly a headache), it’s highly recommended.
+
+### So... How Does This Code Even Work?
+
+As promised from the last post, let's talk code. But don’t worry – I won’t put you to sleep with jargon. There are three key components in the system: Firmware, Driver, and External Software. But since we’re all friends here, let’s simplify it. In Alpaca, the driver and external software are basically one thing, so we’ll just call it “The Driver” from now on.
+
+Now, the firmware lives on the microcontroller in the box (fancy, right?), and the driver lives on your hosting computer, where your astrophotography magic is happening.
+
+### The Firmware – A Little Box of Wonders (and Patience)
+
+The firmware communicates through a serial connection (wired or wireless) and just waits for the driver to ask it for something. When the firmware boots up, it pulls all the important info from its internal memory, like the last known state of everything. If you unplugged it last time with Input X switched on, guess what? It’ll remember that when you plug it back in. It’s like the firmware has memory (we all wish we were that reliable).
+
+It’s loaded with a bunch of serial commands that do different things. For example, the command “K#” gets the board's signature, which tells you all the important info like the version and available outputs. Or “J#,” which asks the firmware about the inputs – is it a regular input? PWM? Or does it just stay on? (A little passive, but we don’t judge.)
+
+Then there’s “I#” – checking if there’s a temperature and humidity sensor connected. It's like the firmware is just asking, “Hey, you got any sensors around here?” The list goes on, but you get the point. The firmware is busy doing its thing, checking statuses, and just hanging out, waiting for instructions.
+
+### Now Enter the Driver (Cue Dramatic Music)
+
+On the driver side, we send the firmware various requests, asking for data. According to the ASCOM documentation, the driver needs to support methods like SetSwitch() and SetSwitchValue() [you can check it out here, if you’re into that sort of thing](https://ascom-standards.org/Help/Developer/html/M_ASCOM_DriverAccess_Switch_SetSwitch.htm).
+
+But wait, we’re not just sending random commands. Nope. We go through the Alpaca server, which means we need to create endpoints for all these actions. For example, if we want to change the switch value, we create a PUT endpoint (yes, it took me way too long to figure out that detail). This endpoint then calls SetSwitchValue() and translates it into a command that the firmware understands.
+
+But let’s not get too bogged down. There are a million checks happening in the background, like making sure the box is connected, verifying the ID exists, and double-checking if those state values are within a legal range. It’s fun, really. You know, the kind of fun that involves a lot of checking and re-checking.
+
+### The Fun Part – A Few Extra Features Because Why Not?
+
+Once we’ve got the basics down, it’s time to get fancy. We can add cool methods like “AllOn” or “AllOff,” which turn everything on or off at once. It's like a master switch for lazy astrophotographers.
+
+Also, we want to make sure we’re staying ahead of the curve, so we can throw in features like an algorithm that automatically adjusts the dew heater based on the dew point (thanks to the temperature and humidity sensor). Who knew code could make you feel so powerful?
+
+### Enter the Front-End – ReactJS to the Rescue
+
+Okay, time to get pretty! The front end of the driver is built with ReactJS, so it sends REST calls directly to the Alpaca server. I’m not saying it’s beautiful, but it’s pretty close. The UI is sleek, and it even stores some handy values like voltage, current, and temperature, just to make you feel like a wizard. Oh, and it makes informative charts – because who doesn’t love charts?
+
+### The (Not So Fun) Dependency Drama
+
+Here’s the catch – to run the server with the driver, you need all the node modules. I know, it's a hassle. But don't worry, I got you covered. I created an .exe package that installs everything for you. The first time you run the app, it checks for dependencies and installs them if needed. The only downside? You need an internet connection for that little magic trick. But if you’re in the middle of nowhere without Wi-Fi, don’t panic – the native ASCOM driver is still available for you.
+
+And about that native ASCOM driver – it’s got its own set of methods and even includes a Windows Forms control, but trust me, steer clear of the Windows Forms UI. It’s like a roller coaster of bugs. Just trust me on this one.
+
+### Almost There...
+
+So, if you’ve made it this far, congratulations – you deserve a medal. The next post will cover the installation process, troubleshooting, and maybe a few UI tricks that will make your life easier. But until then, enjoy the wild ride.
+
+---
+
+<div style="background: darkgray;padding: 25px; padding-bottom: 10px; border-radius: 15px;">
+<font style="font-weight: bold">Want the PCB, microcontroller, components, CNC or 3D prints and pre-installed firmware delivered to you?</font> 
+<p style="margin-top: 10px"><a href="mailto:TheBrightKnight@duck.com"><u>Send me an email</u></a> or use the <a href="/contact"><u>contact form</u></a></p>
+</div>
+
+~ TheBrightKnight
