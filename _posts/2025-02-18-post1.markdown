@@ -14,9 +14,27 @@ project: PowerBox
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
+<style>
+  .responsive-img {
+    float: right;
+    max-width: 30%;
+    height: auto;
+    margin-left: 35px;
+  }
+
+  @media (max-width: 768px) {
+    .responsive-img {
+      float: none;
+      display: block;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+  }
+</style>
+
 ## Welcome back, my fellow cable-overlords!
 
-<img src="/img/powerbox_post1/1.jpg" style="float: right; max-width: 30%; height: auto; margin-left: 35px;">
+<img src="/img/powerbox_post1/1.jpg" class="responsive-img">
 
 I honestly have no clue where to start with this one. This project? Oh, it’s just my longest, biggest, most complicated, most hair-pulling, sleep-depriving, "why do I even do this to myself" project ever. But hey, I survived, I learned a ton, and now you get to learn from my chaos. Who knows, maybe you’ll even build one yourself!
 <br>
@@ -44,7 +62,7 @@ And I did it. It’s beautiful. It’s powerful. It’s got more bells and whist
 
 ## The Must-Have Features:
 
-<img src="/img/powerbox_post1/4.jpeg" style="float: right; max-width: 30%; height: auto; margin-left: 35px;">
+<img src="/img/powerbox_post1/4.jpeg"  class="responsive-img">
 
 - **Controlled DC Outputs** – At least 4 of them, because why stop at one?
 - **Controlled RCA Output** – Dew heaters love these, and we love dew heaters.
@@ -69,7 +87,7 @@ Naturally, there were _incidents_ along the way. Burnt boards. Exploding compone
 
 ## Enter: The Pro Version
 
-<img src="/img/powerbox_post1/2.jpeg" style="float: right; max-width: 30%; height: auto; margin-left: 35px;">
+<img src="/img/powerbox_post1/2.jpeg"  class="responsive-img">
 
 Of course, I didn’t stop there. As the project grew, I got feedback (and more wild ideas), so I ended up making _two_ versions:
 

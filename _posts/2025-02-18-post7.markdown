@@ -14,7 +14,37 @@ project: PowerBox
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
-<img src="/img/powerbox_post7/1.JPG" style="float: right; max-width: 45%; height: auto; margin-left: 35px;">
+<style>
+  .responsive-img {
+    float: right;
+    max-width: 45%;
+    height: auto;
+    margin-left: 35px;
+  }
+
+  .responsive-img2 {
+    height: auto;
+  }
+
+  @media (max-width: 768px) {
+    .responsive-img {
+      float: none;
+      display: block;
+      max-width: 100% !important;
+      margin: 0 auto;
+    }
+    .responsive-img2 {
+      float: none !important;
+      display: block !important;
+      max-width: 100% !important;
+      margin: 0 auto !important;
+      margin-bottom: 10px  !important;
+    }
+
+  }
+</style>
+
+<img src="/img/powerbox_post7/1.JPG" class="responsive-img">
 
 If you’re still here, it means that you have everything in hand. In this post, we will go over the installation process.
 
@@ -123,14 +153,14 @@ Congratulations! The drivers are now installed!
 
 ## 3. Connecting to the PowerBox
 
-<img src="/img/powerbox_post7/4.png" style="float: right; max-width: 45%; height: auto; margin-left: 35px;">
+<img src="/img/powerbox_post7/4.png" class="responsive-img">
 
 1. Connect your PowerBox to the computer with a USB cable.
 2. Click the new shortcut on your desktop. The first time will take a few moments to load. It will open a new window with the Server information. After some time, a new browser window with the Web app should appear. If not, manually open your browser and enter the IP assigned to it (listed in the small window with the server details, e.g., `192.168.X.X:5556`).
 3. Once the app is loaded, click the **Connect** button and then click on the refresh icon next to it. Select the COM port and click **Connect**.
 4. Once connected successfully, you will see all the ports and their status. Clicking on **More** will open a detailed view with advanced controls.
 
-<img src="/img/powerbox_post7/5.png" style="float: right; max-width: 45%; height: auto; margin-left: 35px;">
+<img src="/img/powerbox_post7/5.png" class="responsive-img">
 
 You can connect to the Web App from any device (smartphone/tablet/computer) that is connected to your network by simply opening the browser and entering the IP (e.g., `192.168.X.X:5556`).
 
@@ -140,7 +170,7 @@ You can connect to the Web App from any device (smartphone/tablet/computer) that
 
 ## 4. Connecting to the PowerBox with N.I.N.A (or any other software)
 
-<img src="/img/powerbox_post7/3.png" style="float: right; max-width: 45%; height: auto; margin-left: 35px;">
+<img src="/img/powerbox_post7/3.png" class="responsive-img">
 
 This is a one-time process. After installing and connecting to the Web app, you need to set up the Alpaca Dynamic Driver to access it from N.I.N.A or other software:
 
@@ -161,7 +191,7 @@ _Note: When connecting in Windows Bluetooth settings, there will be two types (B
 
 ## 6. Connecting External Temperature and Humidity Sensors
 
-<img src="/img/powerbox_post7/6.jpg" style="float: right; max-width: 30%; height: auto; margin-left: 35px;">
+<img src="/img/powerbox_post7/6.jpg" style="max-width: 30%" class="responsive-img">
 
 The box has an internal sensor, but if you want more accurate readings, you can connect an external sensor like the **SHT30/31** to the 4-pin output port.
 

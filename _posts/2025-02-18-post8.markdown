@@ -14,6 +14,36 @@ project: PowerBox
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
+<style>
+  .responsive-img {
+    float: right;
+    max-width: 45%;
+    height: auto;
+    margin-left: 35px;
+  }
+
+  .responsive-img2 {
+    height: auto;
+  }
+
+  @media (max-width: 768px) {
+    .responsive-img {
+      float: none;
+      display: block;
+      max-width: 100% !important;
+      margin: 0 auto;
+    }
+    .responsive-img2 {
+      float: none !important;
+      display: block !important;
+      max-width: 100% !important;
+      margin: 0 auto !important;
+      margin-bottom: 10px  !important;
+    }
+
+  }
+</style>
+
 Ahh, the final chapter! Two years of blood, sweat, and code, all packed into 8 posts. Can you believe we’re here? In this last post, I’m diving into some cool features of the Web App that will make your life a lot easier and your PowerBox experience even smoother.
 
 By now, I’m hoping your setup is all good to go, and you've connected to the WebApp from any device on your network. If not, no worries! We’re almost there.
@@ -25,7 +55,7 @@ By now, I’m hoping your setup is all good to go, and you've connected to the W
 When you first fire up the Web App, if the box isn't connected, you’ll just see a “Connect” button and a little icon to choose your COM port. Once that’s done, buckle up—you're about to see some awesome features!
 
 <div style="text-align:center;">
-<img src="/img/powerbox_post8/1.png"  style="max-width:80%; height:auto;">
+<img src="/img/powerbox_post8/1.png"  style="max-width:80%; height:auto;" class="responsive-img2">
 </div>
 
 ---
@@ -33,7 +63,7 @@ When you first fire up the Web App, if the box isn't connected, you’ll just se
 ### Main Page (Home Tab):
 
 <div style="text-align:center;">
-<img src="/img/powerbox_post8/2.png"  style="max-width:80%; height:auto;">
+<img src="/img/powerbox_post8/2.png"  style="max-width:80%; height:auto;" class="responsive-img2">
 </div>
 
 The Home Tab gives you a quick, high-level look at everything going on with your PowerBox.
@@ -51,7 +81,7 @@ The Home Tab gives you a quick, high-level look at everything going on with your
   - Want to see the history? Hit that little down arrow, and you’ll open a chart with all the past readings.
 
 <div style="text-align:center;">
-<img src="/img/powerbox_post8/3.png"  style="max-width:80%; height:auto;">
+<img src="/img/powerbox_post8/3.png"  style="max-width:80%; height:auto;" class="responsive-img2">
 </div>
 
 - **Main Input Voltage & Total Amps**:
@@ -73,11 +103,11 @@ The Home Tab gives you a quick, high-level look at everything going on with your
 Clicking that “More” button opens up a treasure trove of info in the PowerBox tab.
 
 <div style="text-align:center;">
-<img src="/img/powerbox_post8/4.png"  style="max-width:80%; height:auto;">
+<img src="/img/powerbox_post8/4.png"  style="max-width:80%; height:auto;" class="responsive-img2">
 </div>
 
 - **PowerBox Version & Firmware Version**:
-  <img src="/img/powerbox_post8/5.png" style="float: right; max-width: 45%; height: auto; margin-left: 35px;">
+  <img src="/img/powerbox_post8/5.png" class="responsive-img">
 
   - Yep, you’ll see it here too—just in case you forgot.
 
@@ -90,7 +120,7 @@ Clicking that “More” button opens up a treasure trove of info in the PowerBo
   - As usual, hit the down arrow for the history charts.
 
 - **Main Input Voltage & Total Amps**:
-  <img src="/img/powerbox_post8/6.png" style="float: right; max-width: 45%; height: auto; margin-left: 35px;">
+  <img src="/img/powerbox_post8/6.png" class="responsive-img">
 
   - Expand this to view a chart with historical data.
 
@@ -103,7 +133,7 @@ Clicking that “More” button opens up a treasure trove of info in the PowerBo
   - **Type**: Choose between a simple on/off switch or PWM input (great for accessories like dew heaters).
   - **Auto Dew Control**: If it’s PWM, you can activate Auto Dew Control, which automatically adjusts power based on temperature and humidity.
   - **Slider**: For PWM, you can tweak the power level with a handy slider.
-    <img src="/img/powerbox_post8/7.png" style="float: right; max-width: 45%; height: auto; margin-left: 35px;">
+    <img src="/img/powerbox_post8/7.png" class="responsive-img">
   - **Amps**: You’ll see how many amps are drawn from that input, plus a history chart for deep dives.
 
 - **Bottom of the Page**:
@@ -120,7 +150,7 @@ Clicking that “More” button opens up a treasure trove of info in the PowerBo
 Once you’ve installed the Dynamic Alpaca Driver (check the previous post), you’re ready to connect your box to N.I.N.A (or any other astrophotography software).
 
 - **Gauges**:
-  <img src="/img/powerbox_post8/8.png" style="float: right; max-width: 55%; height: auto; margin-left: 35px;">
+  <img src="/img/powerbox_post8/8.png" style="max-width: 55%" class="responsive-img">
 
   - The top section shows amps for each input, plus temperature, humidity, and dew point readings.
 
@@ -156,7 +186,7 @@ Two years of work and a ton of fun, all packed into one epic project. I’m so g
 Got questions? Don’t hesitate to reach out to me here or start a new discussion on the [<u>GitHub repository</u>](https://github.com/TheBrightKnight/PowerBox). I’m always happy to chat!
 
 <div style="text-align:center;">
-<img src="/img/powerbox_post8/9.jpeg"  style="max-width:80%; height:auto;">
+<img src="/img/powerbox_post8/9.jpeg"  style="max-width:80%; height:auto;" class="responsive-img2">
 </div>
 
 ---

@@ -14,9 +14,39 @@ project: PowerBox
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
+<style>
+  .responsive-img {
+    float: right;
+    max-width: 45%;
+    height: auto;
+    margin-left: 35px;
+  }
+
+  .responsive-img2 {
+    height: auto;
+  }
+
+  @media (max-width: 768px) {
+    .responsive-img {
+      float: none;
+      display: block;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+    .responsive-img2 {
+      float: none !important;
+      display: block !important;
+      max-width: 100% !important;
+      margin: 0 auto !important;
+      margin-bottom: 10px  !important;
+    }
+
+  }
+</style>
+
 Ah, software—usually my favorite part.
 
-<img src="/img/powerbox_post5/5.png" style="float: right; max-width: 45%; height: auto; margin-left: 35px;">
+<img src="/img/powerbox_post5/5.png"  class="responsive-img">
 And when I say _usually_, it's because, under normal circumstances, I get to choose the tech stack I want to develop with. But this time? The drivers had to be **ASCOM-compatible**, which meant working within their framework.
 
 That changed later on…
@@ -42,7 +72,7 @@ I built a large command directory to control components, retrieve data, save set
 
 This driver sits in the background, bridging the gap between your astrophotography software (like N.I.N.A.) and the microcontroller.
 
-<img src="/img/powerbox_post5/3.png" style="float: right; max-width: 45%; height: auto; margin-left: 35px;">
+<img src="/img/powerbox_post5/3.png"  class="responsive-img">
 
 The flow looks like this:
 
@@ -64,7 +94,7 @@ But for all the cool stuff—reading voltage & amps, renaming inputs, monitoring
 This standalone application bypasses the ASCOM driver and talks directly to the microcontroller.
 
 But here’s the challenge:
-<img src="/img/powerbox_post5/2.JPG" style="float: right; max-width: 30%; height: auto; margin-left: 35px;">
+<img src="/img/powerbox_post5/2.JPG"  class="responsive-img">
 
 - What if you’re also using N.I.N.A.?
 - What if you turn on a switch in N.I.N.A.—shouldn’t it also update in our software so everything stays in sync?
@@ -79,7 +109,7 @@ Then came the game changer: ASCOM Alpaca.
 
 Alpaca is the modern version of ASCOM, introducing universal, cross-platform capabilities and eliminating the need for a traditional driver.
 
-<img src="/img/powerbox_post5/4.PNG" style="float: right; max-width: 45%; height: auto; margin-left: 35px;">
+<img src="/img/powerbox_post5/4.PNG" class="responsive-img">
 
 That meant I could:
 
@@ -96,7 +126,7 @@ Here’s how it works:
 Now, all parts of the system can talk to each other seamlessly.
 
 <div style="text-align:center;">
-<img src="/img/powerbox_post5/1.png"  style="max-width:80%; height:auto;">
+<img src="/img/powerbox_post5/1.png"  style="max-width:80%; height:auto;" class="responsive-img2">
 </div>
 
 ---

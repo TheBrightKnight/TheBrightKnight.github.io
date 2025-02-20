@@ -14,13 +14,41 @@ project: PowerBox
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
+<style>
+  .responsive-img {
+    float: right;
+    max-width: 30%;
+    height: auto;
+    margin-left: 35px;
+  }
+
+  .responsive-img2 {
+    height: auto;
+  }
+
+  @media (max-width: 768px) {
+    .responsive-img {
+      float: none;
+      display: block;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+    .responsive-img2 {
+      float: none !important;
+      display: block !important;
+      max-width: 100% !important;
+      margin: 0 auto !important;
+      margin-bottom: 10px  !important;
+    }
+
+  }
+</style>
+
 The enclosure transforms this from a DIY project into something that _actually_ looks like a real product. Your choice of material impacts durability, heat dissipation, ease of use, and aesthetics.
 
 <div style="text-align:center;">
-<img src="/img/powerbox_post4/5.jpg"  style="max-width:95%; height:auto;">
+<img src="/img/powerbox_post4/5.jpg"  style="max-width:95%; height:auto;" class="responsive-img2">
 </div>
-
-<!-- <img src="/img/powerbox_post4/3.jpg" style="float: right; max-width: 30%; height: auto; margin-left: 35px;"> -->
 
 ## **CNC Machining (Premium Choice)**
 
@@ -37,14 +65,14 @@ The enclosure transforms this from a DIY project into something that _actually_ 
 - Expensive (but worth it if you want a pro-level build).
 
 <div style="text-align:center;">
-<img src="/img/powerbox_post4/1.jpeg"  style="max-width:44.5%; height:auto;">
-<img src="/img/powerbox_post4/2.jpg"  style="max-width:25%; height:auto;">
-<img src="/img/powerbox_post4/3.jpg"  style="max-width:25%; height:auto;">
+<img src="/img/powerbox_post4/1.jpeg"  style="max-width:44.5%; height:auto;" class="responsive-img2">
+<img src="/img/powerbox_post4/2.jpg"  style="max-width:25%; height:auto;" class="responsive-img2">
+<img src="/img/powerbox_post4/3.jpg"  style="max-width:25%; height:auto;" class="responsive-img2">
 </div>
 
 ## **3D Printing (Budget Choice)**
 
-<img src="/img/powerbox_post4/4.jpeg" style="float: right; max-width: 40%; height: auto; margin-left: 35px;">
+<img src="/img/powerbox_post4/4.jpeg" class="responsive-img">
 
 **Pros:**
 
@@ -82,8 +110,8 @@ Find all 3D (.STEP) files in my [<u>GitHub repository</u>](https://github.com/Th
 - Choose the cheapest shipping option before submitting your order. This will request a quote (usually ready in 24 hours).
 
 <div style="text-align:center;">
-<img src="/img/powerbox_post4/6.png"  style="max-width:45%; height:auto; margin-right: 20px;">
-<img src="/img/powerbox_post4/7.png"  style="max-width:45%; height:auto;">
+<img src="/img/powerbox_post4/6.png"  style="max-width:45%; height:auto; margin-right: 20px;" class="responsive-img2">
+<img src="/img/powerbox_post4/7.png"  style="max-width:45%; height:auto;" class="responsive-img2">
 </div>
 
 ---

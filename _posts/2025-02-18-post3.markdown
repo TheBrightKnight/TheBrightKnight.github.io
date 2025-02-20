@@ -14,6 +14,24 @@ project: PowerBox
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
+<style>
+  .responsive-img {
+    float: right;
+    max-width: 30%;
+    height: auto;
+    margin-left: 35px;
+  }
+
+  @media (max-width: 768px) {
+    .responsive-img {
+      float: none;
+      display: block;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+  }
+</style>
+
 Curious? I was too.
 
 I owe you at least a few words about the components that went into this madness. If you've made it this far, you deserve some details!
@@ -57,7 +75,7 @@ I've highlighted and numbered important parts on the PCB, and below, you’ll fi
 - Includes current sense feedback for monitoring.
 - Both _Pro_ and _Essential_ versions have 3 of these circuits, allowing up to 6 controlled outputs.
 
-<img src="/img/powerbox_post3/1.jpeg" style="float: right; max-width: 40%; height: auto; margin-left: 35px;">
+<img src="/img/powerbox_post3/1.jpeg" class="responsive-img">
 
 ### **6. USB 3.0 Hub**
 
@@ -98,7 +116,7 @@ I've highlighted and numbered important parts on the PCB, and below, you’ll fi
 
 All _Gerber_, _Pick & Place_, and _BOM_ files are available on my [<u>GitHub repository</u>](https://github.com/TheBrightKnight/PowerBox).
 
-<img src="/img/powerbox_post3/3.png" style="float: right; max-width: 50%; height: auto; margin-left: 35px; ">
+<img src="/img/powerbox_post3/3.png" class="responsive-img">
 
 ### **Ordering the PCB**
 
@@ -133,7 +151,7 @@ In addition, you can check that the bottom side of the R16 resistor located on t
 
 If (and only if) the USB3 and USB2 outputs are working, but your computer cannot identify the COM port of the microcontroller, try installing the CH340 drivers (Google it).
 
-<img src="/img/powerbox_post3/4.png" style="float: right; max-width: 50%; height: auto; margin-left: 35px">
+<img src="/img/powerbox_post3/4.png" class="responsive-img">
 
 ### **IMPORTANT: Pro Version PCB Order Settings**
 

@@ -14,11 +14,29 @@ project: PowerBox
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
+<style>
+  .responsive-img {
+    float: right;
+    max-width: 30%;
+    height: auto;
+    margin-left: 35px;
+  }
+
+  @media (max-width: 768px) {
+    .responsive-img {
+      float: none;
+      display: block;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+  }
+</style>
+
 Good! You decided to stay. Welcome back to the madness.
 
 Our journey begins with a simple question—**WHERE DO I EVEN START?!**
 
-<img src="/img/powerbox_post2/6.jpeg" style="float: right; max-width: 30%; height: auto; margin-left: 35px;">
+<img src="/img/powerbox_post2/6.jpeg" class="responsive-img">
 I’ve built projects before, but this was the first time I had to mess with electricity that was responsible for powering very expensive equipment. No pressure, right? But hey, baby steps. I got this. Okay, maybe by the 30th iteration… (RIP to my many failed attempts, forever resting in the graveyard of dead components.)
 
 Honestly? **Totally worth it.**
@@ -28,7 +46,7 @@ That’s the beauty of being a maker. If you don’t know how to do something? R
 <br>
 ## **Version 1: The "Essential" Edition**
 
-<img src="/img/powerbox_post2/7.JPG" style="float: right; max-width: 25%; height: auto; margin-left: 35px;">
+<img src="/img/powerbox_post2/7.JPG" class="responsive-img">
 
 I started with the _Essential_ version (because at that point, there was no "Pro" yet). With each iteration, things got better:
 
@@ -69,14 +87,14 @@ Now, the _Pro_ version came with its own set of nightmares—I mean, challenges:
 
 ## **USB 3.0: The Pain, The Struggle, The Victory**
 
-<img src="/img/powerbox_post2/9.JPG" style="float: right; max-width: 25%; height: auto; margin-left: 35px;">
+<img src="/img/powerbox_post2/9.JPG" class="responsive-img">
 
 If you’ve ever tried designing a USB3 hub, you’ll know that finding useful resources is like hunting for unicorns. There’s barely any documentation, tons of engineering rules, and a lot of trial and error involved.
 
 After days of scouring the internet, I finally hit gold—a guide from Texas Instruments. This thing had all the rules I needed to follow, and let me tell you… some of them were _weird_.
-<img src="/img/powerbox_post2/10.JPG" style="float: right; max-width: 25%; height: auto; margin-left: 35px;">
 
 Of course, my first few USB3 hubs didn’t even work. Then they worked… but constantly lost connection. Then they were slower than a floppy disk. Then they went back to not working at all. Fun times.
+<img src="/img/powerbox_post2/10.JPG" class="responsive-img">
 
 To make it even more "fun," I decided to hand-solder everything to save costs. Picture soldering tiny 0402 components and a USB chip with a QFN-76 package (which I’m convinced was designed by the devil himself). Yeah… let’s just say, I was _this close_ to giving up.
 
