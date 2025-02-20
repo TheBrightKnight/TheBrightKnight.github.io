@@ -17,9 +17,13 @@ project: PowerBox
 <style>
   .responsive-img {
     float: right;
-    max-width: 30%;
+    max-width: 45%;
     height: auto;
     margin-left: 35px;
+  }
+
+  .responsive-img2 {
+    height: auto;
   }
 
   @media (max-width: 768px) {
@@ -29,6 +33,14 @@ project: PowerBox
       max-width: 100%;
       margin: 0 auto;
     }
+    .responsive-img2 {
+      float: none !important;
+      display: block !important;
+      max-width: 100% !important;
+      margin: 0 auto !important;
+      margin-bottom: 10px  !important;
+    }
+
   }
 </style>
 
@@ -68,8 +80,8 @@ The result? A tiny, mighty Essential PCB measuring just 83mm × 68mm — all whi
 Can you guess the margins on similar products in the market? Yeah… I did too.
 
 <div style="text-align:center;">
-<img src="/img/powerbox_post2/1.jpg"  style="max-width:40%; height:auto; margin-right: 20px">
-<img src="/img/powerbox_post2/2.jpg"  style="max-width:40%; height:auto;">
+<img src="/img/powerbox_post2/1.jpg"  style="max-width:40%; height:auto; margin-right: 20px" class="responsive-img2">
+<img src="/img/powerbox_post2/2.jpg"  style="max-width:40%; height:auto;" class="responsive-img2">
 </div>
 
 ## **Leveling Up: The "Pro" Edition**
@@ -80,8 +92,8 @@ Now, the _Pro_ version came with its own set of nightmares—I mean, challenges:
 2. **Size Constraints** – To keep manufacturing costs down, the PCB had to stay under 100mm × 100mm. Go beyond that, and you get hit with a premium fee. And that wasn’t happening. Not in my house.
 
 <div style="text-align:center;">
-<img src="/img/powerbox_post2/3.jpeg"  style="max-width:40%; height:auto; margin-right: 20px">
-<img src="/img/powerbox_post2/4.jpg"  style="max-width:40%; height:auto;">
+<img src="/img/powerbox_post2/3.jpeg"  style="max-width:40%; height:auto; margin-right: 20px" class="responsive-img2">
+<img src="/img/powerbox_post2/4.jpg"  style="max-width:40%; height:auto;" class="responsive-img2">
 </div>
 <br>
 
@@ -102,8 +114,8 @@ But persistence pays off! Not only did I finally nail it, but I even threw in an
 
 I know, I know. Some haters will say, _“bUt tHEre aRe smALLer pROdUcTS oUt tHEre”_. To them, I say: go read the reviews. See how well those USB3 hubs perform on cold nights. Check their price-to-performance ratio. Then come back and tell me who’s winning. 😉
 
-<img src="/img/powerbox_post2/5.jpeg"  style="max-width:45%; height:auto;">
-<img src="/img/powerbox_post2/8.jpeg"  style="max-width:45%; height:auto;">
+<img src="/img/powerbox_post2/5.jpeg"  style="max-width:45%; height:auto;" class="responsive-img2">
+<img src="/img/powerbox_post2/8.jpeg"  style="max-width:45%; height:auto;" class="responsive-img2">
 
 ## **Next Steps: The Enclosure, Drivers & Software**
 
