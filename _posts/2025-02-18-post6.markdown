@@ -63,6 +63,8 @@ So, if you’ve made it this far, congratulations – you deserve a medal. The n
 <div style="background: darkgray;padding: 25px; padding-bottom: 10px; border-radius: 15px;">
 <font style="font-weight: bold">Want the PCB, microcontroller, components, CNC or 3D prints and pre-installed firmware delivered to you?</font> 
 <p style="margin-top: 10px"><a href="mailto:TheBrightKnight@duck.com"><u>Send me an email</u></a> or use the <a href="/contact"><u>contact form</u></a></p>
+
+<p style="margin-top: 10px; font-weight: bold">Want to buy me beer 🍻? Use <a href="https://www.paypal.com/paypalme/TheBrightNight?country.x=DE&locale.x=en_US" target="_blank"><u>this link</u></a></p>
 </div>
 
 ~ TheBrightKnight
