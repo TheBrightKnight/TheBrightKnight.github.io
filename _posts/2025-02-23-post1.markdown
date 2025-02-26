@@ -1,0 +1,133 @@
+---
+layout: post
+title: "Smart NPK Monitoring – Because Your Plants Deserve VIP Treatment"
+subtitle: "Turn Your Garden Into a Data-Driven Paradise"
+date: 2025-02-23 12:00:02 +0100
+background: /img/posts/1.jpg
+categories: [Smart NPK Monitoring]
+author: TheBrightKnight
+project: Smart NPK Monitoring
+---
+
+<link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<style>
+  .responsive-img {
+    float: right;
+    max-width: 35%;
+    height: auto;
+    margin-left: 35px;
+  }
+
+  .responsive-img2 {
+    height: auto;
+  }
+
+  @media (max-width: 768px) {
+    .responsive-img {
+      float: none;
+      display: block;
+      max-width: 100% !important;
+      margin: 0 auto;
+    }
+    .responsive-img2 {
+      float: none !important;
+      display: block !important;
+      max-width: 100% !important;
+      margin: 0 auto !important;
+      margin-bottom: 10px  !important;
+    }
+
+  }
+</style>
+
+Yep, I did it again. Another weekend, another sensor, another project. At this point, I might have more microcontrollers than socks. But hey, who needs fashion when you can have real-time soil nutrient monitoring?
+
+So today, I bring you my latest gardening-tech masterpiece – an NPK monitoring system!
+
+Yes, you heard that right! This little gadget will let you monitor your plant’s **Nitrogen (N), Phosphorus (P), and Potassium (K) levels** over the network. No more guessing, no more generic nutrient schedules—just smart, plant-specific insights tailored to its growth stage.
+
+Best part? This is a short and easy read, so stick around.
+
+<div style="text-align:center;">
+<img src="/img/smart_npk_post1/1.jpg"  style="max-width:80%; height:auto;" class="responsive-img2">
+</div>
+
+---
+
+#### Why Even Bother?
+
+Some people have a mystical, almost magical connection with their plants. They just _know_ when a plant needs more nitrogen or when it's silently screaming for phosphorus.
+
+For the rest of us? Well… we rely on charts, schedules, and a bit of luck. But here’s the thing: nutrient needs vary based on plant type, species, environment, and a whole bunch of other factors.
+
+A real-time monitoring system solves this guesswork by giving you the data straight from the soil itself. No more nutrient deficiencies, no more overfeeding disasters—just happy, healthy plants!
+
+Sure, there are other nutrients (Calcium, Magnesium, Iron, etc.), but let’s not get carried away—those sensors are pricey! 😅 We’re keeping it simple.
+
+---
+
+#### How Much Does This Cost?
+
+Roughly 45-50 Euros—cheaper than replacing your dead plants over and over!
+
+---
+
+#### What Do You Need?
+
+##### **The Essentials:**
+
+- **NPK Sensor** ([Get it here](https://www.aliexpress.com/item/1005001524845572.html))
+  - More about the sensor in [ComwinTop](https://store.comwintop.com/products/rs485-4-20ma-soil-temperature-humidity-moisture-conductivity-ec-ph-sensor?variant=43435240227043)
+  - Check the [GitHub repo](https://github.com/TheBrightKnight/smart_npk_sensor) for docs
+  - _Note:_ There are other sensors that also measure pH, EC, and moisture, but we'll need to tweak the code to use them.
+- **RS485 module** – This lets your microcontroller talk to the sensor.
+- **ESP32 microcontroller** ([Recommended model](https://www.aliexpress.com/item/1005006336964908.html))
+
+##### **Bonus Upgrades (For Those Who Like Things Neat & Tidy):**
+
+- **DC Power Socket** – [Buy here](https://www.aliexpress.com/item/1005003742132830.html) _(DC007B 5.5x2.1mm)_
+- **XH2.54 Header Connector** – [Buy here](https://www.aliexpress.com/item/1005006027334406.html) _(4-pin, Vertical SMD)_
+- **Custom PCB** – To make things super clean (details below).
+
+---
+
+##### Wiring: Choose Your Path!
+
+**For the DIY warriors:** Love the classic "cable-chaos" aesthetic™? No problem! Here’s a simple wiring schematic to follow.
+
+<div style="text-align:center;">
+<img src="/img/smart_npk_post1/3.png"  style="max-width:80%; height:auto;" class="responsive-img2">
+</div>
+
+<img src="/img/smart_npk_post1/2.png" class="responsive-img">
+
+**For the cool kids:** I designed a custom PCB to make everything fit nicely and tightly.
+
+- Gerber files available [on GitHub](https://github.com/TheBrightKnight/smart_npk_sensor)
+- Send them to your favorite PCB manufacturer (JLCPCB, PCBWay, etc.) and get yourself a sleek, pro-level board.
+
+Oh, and if you like things extra polished, grab the 3D-printable enclosure files from the repo and print yourself a pro-looking case.
+
+<div style="text-align:center;">
+<img src="/img/smart_npk_post1/5.jpg"  style="max-width:40%; height:auto;" class="responsive-img2">
+<img src="/img/smart_npk_post1/6.jpg"  style="max-width:40%; height:auto;" class="responsive-img2">
+</div>
+
+---
+
+<div style="background: darkgray;padding: 25px; padding-bottom: 10px; border-radius: 15px;">
+<font style="font-weight: bold">Want the PCB, microcontroller, components, 3D prints and pre-installed firmware delivered to you?</font> 
+<p style="margin-top: 10px"><a href="mailto:TheBrightKnight@duck.com"><u>Send me an email</u></a> or use the <a href="/contact"><u>contact form</u></a></p>
+
+<p style="margin-top: 10px; font-weight: bold">Want to buy me beer 🍻? Use <a href="https://www.paypal.com/paypalme/TheBrightNight?country.x=DE&locale.x=en_US" target="_blank"><u>this link</u></a></p>
+</div>
+
+In the next post, we’ll dive into the software side of things—how to make the magic happen.
+
+See you!
+
+~ TheBrightKnight
