@@ -1,0 +1,42 @@
+---
+layout: post
+title: "Update for the Smart pH Controller"
+subtitle: "Adding remote control WebApp"
+date: 2024-07-27 12:00:00 +0100
+background: /img/posts/1.jpg
+categories: [pH-Controller]
+author: TheBrightKnight
+project: pH-Controller
+---
+
+<link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+After some time, I finally got around to upgrading my pH controller!  
+Instead of relying on a small screen and clunky buttons, I’ve implemented an API and a web app directly inside the microcontroller.
+
+If you're curious about how API servers and clients work, check out <a href="/smart%20drying%20&%20curing%20system/2025/01/18/post6.html"><u>this explenation</u></a>.
+
+<img src="/img/phcontroller_post6/1.jpeg" style="width: 45%; padding:10px; margin: auto; margin-left: 2% ">
+<img src="/img/phcontroller_post6/2.jpeg" style="width: 45%; padding:10px; margin: auto;">
+<img src="/img/phcontroller_post6/3.jpeg" style="width: 80%; margin: auto; display: block;">
+
+<b>What’s New?</b>
+
+Now, you can calibrate, control, and monitor your pH levels from any device connected to your home network—no extra apps required! Just open your browser and access the interface effortlessly.
+
+<b>How Does It Connect?</b>
+
+The first time you power it on, a new WiFi network will appear on your devices.  
+Simply connect to it, configure your home WiFi details, save the settings, and you’re all set!
+After that, just open your favorite browser and visit: <a href="http://phTator.local"><u>phTator.local</u></a>
+
+Or, if needed, you can access it directly via the device’s IP address, which will be displayed on its screen.
+
+Get It Now!
+The latest version is available on my <a href="https://github.com/TheBrightKnight/smart_ph_controller/tree/main/code"><u> GitHub Repo</u></a> — go check it out!
+
+Until next time -  
+~TheBrightKnight
