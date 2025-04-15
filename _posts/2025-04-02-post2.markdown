@@ -1,0 +1,163 @@
+---
+layout: post
+title: "The Mesh Awakens"
+subtitle: "The Thermometer Rebellion Begins Here"
+date: 2025-04-02 12:00:01 +0100
+background: /img/posts/1.jpg
+categories: [Wireless Thermometer Network]
+author: TheBrightKnight
+project: Wireless Thermometer Network
+---
+
+<link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<style>
+  .responsive-img {
+    float: right;
+    max-width: 35%;
+    height: auto;
+    margin-left: 35px;
+  }
+
+  .responsive-img2 {
+    height: auto;
+  }
+
+  @media (max-width: 768px) {
+    .responsive-img {
+      float: none;
+      display: block;
+      max-width: 100% !important;
+      margin: 0 auto;
+    }
+    .responsive-img2 {
+      float: none !important;
+      display: block !important;
+      max-width: 100% !important;
+      margin: 0 auto !important;
+      margin-bottom: 10px  !important;
+    }
+
+  }
+
+  strong {
+    font-weight: 800;
+    font-size: 16px;
+    font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  }
+</style>
+
+I'm glad you're still here — either you're genuinely interested or stuck in a weird internet rabbit hole. Either way, let’s jump in!
+
+## The Shopping List
+
+You’ll need **one "Hub"** and as many **"Clients"** as your data-hungry heart desires.
+
+_Note: Nothing here is affiliated. I’ve added links for convenience, but feel free to shop wherever — just make sure you’re grabbing the correct components so they match the PCB._
+
+### For the Hub
+
+This one’s easy — no need to worry about power-saving magic since the hub is always plugged in via USB-C.
+
+- **Seeed Xiao ESP32C3** (C6 version also works, but it’s overkill here), get it at [<u>AliExpress</u>](https://www.aliexpress.com/item/33011482127.html) or [<u>Seeed Studio</u>](https://www.seeedstudio.com/Seeed-XIAO-ESP32C3-p-5431.html)  
+   Make sure it’s the one with the little paper antenna thingy!
+
+<img src="/img/wireless_thermostat_post2/1.jpeg" class="responsive-img">
+
+### For Each Client
+
+Multiply everything below by the number of Thermometers (clients) you want to build:
+
+- **Seeed Xiao ESP32C6**, get it at [<u>AliExpress</u>](https://www.aliexpress.com/item/1005006935181127.html) or [<u>Seeed Studio</u>](https://www.seeedstudio.com/Seeed-Studio-XIAO-ESP32C6-p-5884.html)
+- **SHT3X or SHT4X sensor** - I recommend the SHT31-D , get it at [<u>AliExpress</u>](https://www.aliexpress.com/item/1005005142437608.html)
+- **Two 220k 0805 SMD Resistors** , get it at [<u>AliExpress</u>](https://www.aliexpress.com/item/1005005600798857.html)
+- **SMD Switch** , get it at [<u>AliExpress</u>](https://www.aliexpress.com/item/1005005279088080.html)
+- **Right-angle PH2.0MM 2P connector** , get it at [<u>AliExpress</u>](https://www.aliexpress.com/item/1005008131930144.html)
+- **3.7V 250mAh battery** , get it at [<u>AliExpress</u>](https://www.aliexpress.com/item/1005006584143607.html)
+- **PCB** – More on that below
+
+### Tools You'll Need
+
+- A brain (any version should do fine)
+- Soldering tools
+- A 3D printer (for the enclosure)
+- One M2 screw (optional, but nice to have)
+- A computer to flash the code
+
+---
+
+## Getting the PCB
+
+<img src="/img/wireless_thermostat_post2/2.jpeg" style="max-width: 20%" class="responsive-img">
+1. Go to my GitHub repo and download the Gerber files from the `PCB` folder.
+2. Use your favorite PCB fab service like: [<u>JLCPCB</u>](https://cart.jlcpcb.com/quote?orderType=1&stencilLayer=2&stencilWidth=100&stencilLength=100) or [<u>PCBWay</u>](https://www.pcbway.com/)
+3. Upload the files. Everything can stay default except PCB color — I go with black, but pink’s a vibe if that’s your thing.
+4. On JLCPCB, under "Mark on PCB", you can choose "Remove Mark" unless you want a serial number that looks like a phone number.
+5. Minimum quantity is 5, but the price is still hilariously low.
+
+**Heads up:** If you're in the US, keep new China tariff rules in mind. They _might_ apply to PCBs and components shipped from China.
+
+---
+
+## The Enclosures
+
+<div style="text-align:center;">
+<img src="/img/wireless_thermostat_post1/4.jpeg"  style="max-width:60%; height:auto;" class="responsive-img2">
+</div>
+
+1. Go to my GitHub repo and get the STL files from the `3D` folder.
+2. For the Hub (Server) you have the `Server` folder, and for the Thermometers (Clients) you have the `Client` folder.
+3. Print with your home 3D printer.
+
+---
+
+## Let’s Break It Down
+
+<img src="/img/wireless_thermostat_post2/4.jpeg" style="max-width: 25%" class="responsive-img">
+So while we're waiting for our order lets break down the system to understand it better, if you're not a geek like me or just here for the vibes you can skip that part.
+
+#### The Hub (Server)
+
+Acts as the central brain like your nosy neighbor: always listening, never sleeping - waits and receives data from all clients via REST API. It stores history, settings, and names and runs a Web server accessible from any device in your network.
+Since it's a server, and it needs to...well...Serve, it needs to be connected to a power source at all times which allows is to save a buck and use the ESP32C3 version.
+
+Bonus: The hub can also become a sensor! Hook up a sensor to its PCB, and boom — another thermometer.
+If you opt for that make sure to print the "ServerWithSensor" enclosure under the `3D` folder in the GitHub repo, it's the same as the Client just thinner without space for a battery.
+
+#### The Clients (Thermometers)
+
+The Thermometers scattered everywhere are using the ESP32C6, mainly because of it's very low power consumption on deep sleep mode.
+The highlevel workflow is that it wakes up every X minutes (3 by default, but you can configure it to more or less through the web app), take measurements from the sensor, sends it to the the hub and goes back to sleep.
+
+**Battery Life Estimates:**
+
+- 3-minute intervals: 1–2 months
+- 5–10 minute intervals: 4–6 months
+
+Honestly, unless you're monitoring a lava lamp, 3 minutes is probably overkill.
+
+#### How Pairing Works
+
+When pairing starts, the client sends a "ping" to the hub.  
+The hub answers with a "pong", and the client sends over its ID, MAC address, and other details.  
+The hub saves it in its pool of known devices, and from that point on, every time the client wakes up and sends data, it’s stored and made available to the Web interface.
+
+---
+
+Cool, right? _RIGHT?_
+
+That’s it for today. In the next post, we’ll go through the **assembly and installation process**.
+
+Stay tuned, and don’t forget to stretch your back..
+
+<div style="background: darkgray;padding: 25px; padding-bottom: 10px; border-radius: 15px;">
+<font style="font-weight: bold">Want everything assembeled, pre-installed and delivered to you?</font> 
+<p style="margin-top: 10px"><a href="mailto:TheBrightKnight@duck.com"><u>Send me an email</u></a> or use the <a href="/contact"><u>contact form</u></a></p>
+
+<p style="margin-top: 10px; font-weight: bold">Want to buy me beer 🍻? Use <a href="https://www.paypal.com/paypalme/TheBrightNight?country.x=DE&locale.x=en_US" target="_blank"><u>this link</u></a></p>
+</div>
+
+~ TheBrightKnight
