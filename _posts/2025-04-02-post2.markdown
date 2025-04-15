@@ -92,7 +92,7 @@ Multiply everything below by the number of Thermometers (clients) you want to bu
 ## Getting the PCB
 
 <img src="/img/wireless_thermostat_post2/2.jpeg" style="max-width: 20%" class="responsive-img">
-1. Go to my GitHub repo and download the Gerber files from the `PCB` folder.
+1. Go to my [<u>GitHub repo</u>](https://github.com/TheBrightKnight/Wireless-Thermometer-Network) and download the Gerber files from the `PCB` folder.
 2. Use your favorite PCB fab service like: [<u>JLCPCB</u>](https://cart.jlcpcb.com/quote?orderType=1&stencilLayer=2&stencilWidth=100&stencilLength=100) or [<u>PCBWay</u>](https://www.pcbway.com/)
 3. Upload the files. Everything can stay default except PCB color — I go with black, but pink’s a vibe if that’s your thing.
 4. On JLCPCB, under "Mark on PCB", you can choose "Remove Mark" unless you want a serial number that looks like a phone number.
@@ -108,7 +108,7 @@ Multiply everything below by the number of Thermometers (clients) you want to bu
 <img src="/img/wireless_thermostat_post1/4.jpeg"  style="max-width:60%; height:auto;" class="responsive-img2">
 </div>
 
-1. Go to my GitHub repo and get the STL files from the `3D` folder.
+1. Go to my [<u>GitHub repo</u>](https://github.com/TheBrightKnight/Wireless-Thermometer-Network) and get the STL files from the `3D` folder.
 2. For the Hub (Server) you have the `Server` folder, and for the Thermometers (Clients) you have the `Client` folder.
 3. Print with your home 3D printer.
 
@@ -125,7 +125,7 @@ Acts as the central brain like your nosy neighbor: always listening, never sleep
 Since it's a server, and it needs to...well...Serve, it needs to be connected to a power source at all times which allows is to save a buck and use the ESP32C3 version.
 
 Bonus: The hub can also become a sensor! Hook up a sensor to its PCB, and boom — another thermometer.
-If you opt for that make sure to print the "ServerWithSensor" enclosure under the `3D` folder in the GitHub repo, it's the same as the Client just thinner without space for a battery.
+If you opt for that make sure to print the "ServerWithSensor" enclosure under the `3D` folder in the [<u>GitHub repo</u>](https://github.com/TheBrightKnight/Wireless-Thermometer-Network), it's the same as the Client just thinner without space for a battery.
 
 #### The Clients (Thermometers)
 

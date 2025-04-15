@@ -85,7 +85,7 @@ Once soldered:
 
 ## Flashing the Firmware:
 
-Go to my GitHub repo and grab the `.bin` files from the **Firmware** folder. Make sure to pick the right firmware: **Server** for the hub, **Client** for the thermometers.
+Go to my [<u>GitHub repo</u>](https://github.com/TheBrightKnight/Wireless-Thermometer-Network) and grab the `.bin` files from the **Firmware** folder. Make sure to pick the right firmware: **Server** for the hub, **Client** for the thermometers.
 
 <img src="/img/wireless_thermostat_post3/7.jpeg" class="responsive-img">
 1. Plug the device into your computer.
