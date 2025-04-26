@@ -244,12 +244,11 @@ You can add new devices anytime by activating pairing mode. Already-paired devic
 
 ---
 
-## That’s a Wrap
+## That’s a Wrap (is it...?)
 
-You’re officially running your own distributed climate monitoring network. You soldered, flashed, and configured like a pro.
-Ahhhh...feng shui.
+You’re officially running your own distributed climate monitoring network. You soldered, flashed, and configured.
 
-See you on my next project!
+See you on my next project, or the next post - surprise!
 
 <div style="background: darkgray;padding: 25px; padding-bottom: 10px; border-radius: 15px;">
 <font style="font-weight: bold">Want everything assembeled, pre-installed and delivered to you?</font> 

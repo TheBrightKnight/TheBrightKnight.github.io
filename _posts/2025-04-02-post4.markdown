@@ -1,0 +1,199 @@
+---
+layout: post
+title: "Jumping on the Matter Train"
+subtitle: "(and Almost Derailing It)"
+date: 2025-04-02 12:00:03 +0100
+background: /img/posts/1.jpg
+categories: [Wireless Thermometer Network]
+author: TheBrightKnight
+project: Wireless Thermometer Network
+---
+
+<link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<style>
+  .responsive-img {
+    float: right;
+    max-width: 35%;
+    height: auto;
+    margin-left: 35px;
+  }
+
+  .responsive-img2 {
+    height: auto;
+  }
+
+  @media (max-width: 768px) {
+    .responsive-img {
+      float: none;
+      display: block;
+      max-width: 100% !important;
+      margin: 0 auto;
+    }
+    .responsive-img2 {
+      float: none !important;
+      display: block !important;
+      max-width: 100% !important;
+      margin: 0 auto !important;
+      margin-bottom: 10px  !important;
+    }
+
+  }
+
+  strong {
+    font-weight: 800;
+    font-size: 16px;
+    font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  }
+
+  ul, ol {
+    margin-top: 25px;
+  }
+</style>
+
+##### Ok That's (Still) Not Really a Wrap
+
+So apparently my ants-in-the-head had other plans. They kept digging:
+
+> "Why aren’t you like the cool kids using Matter and Thread?"  
+> "Why are you still living in 2010?"  
+> "Why do you need a Hub when you already have Apple HomeKit, Google Home, or Home Assistant hubs?"
+
+And to that I answer, as my father used to say: **"So you'll have what to ask."**
+
+But OK OK, I got it — time to move forward and jump on the Matter train.
+
+---
+
+<img src="/img/wireless_thermostat_post4/2.jpeg" class="responsive-img">
+
+Honestly, most of the heavy lifting in the code was already done.  
+All we needed was to make sure we can pair the device as a Matter device... How hard can it be?! (famous last words)
+
+Turns out, getting ESP-IDF + ESP-Matter up and running, AND actually making it compile, is not exactly a weekend project.
+
+Also, because I’m still civilized, I wanted to use nice libraries like Adafruit for sensors,  
+and not communicate directly with I2C like some caveman.
+
+---
+
+##### 4 Days Later (Yes, Really)
+
+<img src="/img/wireless_thermostat_post4/1.jpeg" class="responsive-img">
+
+After about 4 days (no sleep, marriage status: pending review) — It compiles!
+
+Now, since I was already in _ignore-everything-else-and-code_ mode,  
+I figured why stop there? Let’s add some cool features:
+
+- Keep the EnvironmenTor Hub communication alive.
+- Add Matter support — HomeKit, Google Home, whatever floats your smart home boat.
+- Generate dynamic onboarding codes (you know, that fancy QR code). This will let us use as many devices as we want.
+- Allow soft reset and hard reset using the device's button.
+- Report battery status to Matter.
+- Keep deep sleep working with Matter to save battery.
+
+---
+
+##### Not-easy-peasy oh not-so-breezy I've made it!
+
+##### It's Alive! (With a Few Asterisks)
+
+- Since it needs to communicate with our Hub, we’re stuck with Matter over WiFi (no Thread yet, sorry).
+- Deep sleep + Matter over WiFi is tricky because ESP-Matter doesn’t support ICD (Intermittently Connected Device) with this mode.
+  - This means every time the device wakes up, it has to load the full Matter stack and reconnect, Which takes about 6 seconds and burns some battery.
+  - Estimated battery life: around 2 months at 10-minute intervals. (Not amazing, but not tragic.)
+
+For those of you thinking, "Oh no, this probably has some Chinese spyware that’s going to plant 5G chips in our brains and force us to binge-watch all six seasons of _Sex and the City_...", I also made a second firmware:
+
+- A Matter-Only version (no communication with our Hub),
+- Which should lower power usage a bit,
+- And will eventually make it easier to port to Matter over Thread.
+
+I gotta say, it's working MaGniFicEnTLy!
+
+---
+
+##### How to Use the New Matter Firmware
+
+1. Go to my [<u>GitHub repo</u>](https://github.com/TheBrightKnight/Wireless-Thermometer-Network).
+2. In the Firmware folder, pick the right `.bin` file:
+
+| If you want...            | Flash this file                             |
+| :------------------------ | :------------------------------------------ |
+| EnvironmenTor (no Matter) | `EnvironmenTor-Client.bin`                  |
+| EnvironmenTor + Matter    | `EnvironmenTor-Client-WithMatter.bin`       |
+| Matter Only               | `EnvironmenTor-Client-MatterOnlyDevice.bin` |
+
+---
+
+##### Flashing Instructions
+
+1. Plug the device into your computer.
+2. Open [Espressif Web Flasher](https://espressif.github.io/esptool-js/#) in your browser.
+3. Click **Connect**, select your device, and **Connect** again.
+4. If you see chip details in the black window — good!
+5. Click **Choose File** and pick the `.bin` you want.
+6. **Important**: Set **Flash Address** to `0`.
+7. Click **Program** and wait for it to finish.
+
+When flashing is done:
+
+- Hit **Disconnect**.
+- Under **Console**, click **Start**, reconnect, then hit **Reset**.
+
+---
+
+Now comes the important part:  
+You're looking for two lines that look similar to:
+
+```
+E (3399) app_main: SetupQRCode: https://project-chip.github.io/connectedhomeip/qrcode.html?data=MT:OS011ZJB000MLN44S10
+E (3400) QR: Manual Pairing Code: 35158350250
+```
+
+**Save them somewhere!** (You can also print a label and slap it on the device.)
+
+<div style="text-align:center;">
+<img src="/img/wireless_thermostat_post4/3.png" style="max-width: 80%" class="responsive-img2">
+</div>
+
+---
+
+##### Pairing the Device
+
+- Make sure your phone/tablet is on a 2.4GHz WiFi (not 5GHz) and Bluetooth is ON.
+- If you're using the EnvironmenTor system too, make sure the Hub is online.
+- Recommended: Connect the device to USB while pairing (to keep it awake). If battery-powered, tap the Reset button once to wake it up for 1 minute before trying to pair.
+- Open your app (HomeKit, Google Home, etc.) and pair it using the QR code or manual pairing code.
+- If you’re using EnvironmenTor too — the device will automatically reconnect to the Hub as well.
+
+---
+
+##### Reset Button Cheat Sheet
+
+| Action                                    | What Happens                                                 |
+| :---------------------------------------- | :----------------------------------------------------------- |
+| One click (battery mode)                  | Wake up for 1 minute.                                        |
+| One click (USB mode) or wake up mode      | Send pairing request to EnvironmenTor Hub.                   |
+| Long press ~7–10 sec (slow orange blink)  | Soft Reset: unpair from Matter + clear Hub config.           |
+| Long press ~15–20 sec (fast orange blink) | Hard Reset: everything above + regenerate new pairing codes. |
+
+---
+
+That’s a Real Wrap (Finally)
+Ahhhh... feng shui.
+
+See you on my next project!
+
+<div style="background: darkgray;padding: 25px; padding-bottom: 10px; border-radius: 15px;">
+<font style="font-weight: bold">Want everything assembeled, pre-installed and delivered to you?</font> 
+<p style="margin-top: 10px"><a href="mailto:TheBrightKnight@duck.com"><u>Send me an email</u></a> or use the <a href="/contact"><u>contact form</u></a></p>
+
+<p style="margin-top: 10px; font-weight: bold">Want to buy me beer 🍻? Use <a href="https://www.paypal.com/paypalme/TheBrightNight?country.x=DE&locale.x=en_US" target="_blank"><u>this link</u></a></p>
+</div>
+
+~ TheBrightKnight
