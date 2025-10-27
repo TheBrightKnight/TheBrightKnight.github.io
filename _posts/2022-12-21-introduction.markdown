@@ -13,7 +13,7 @@ featured: true
 
 Hi,  
 My name is The Bright Knight, recently relocated to Germany with my wife to her new job in Munich.  
-I'm working as a data analytics software engineer at Apple for almost 8 years, and an Astrophotographer on my spare time.
+I'm working as a software engineer, and an Astrophotographer on my spare time.
 
 Germany is very cloudy in the winter, and according to my wife, this is what I look like on these cloudy nights 😅:
 
